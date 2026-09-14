@@ -1,6 +1,8 @@
 # How Social Media Plus works
 
-Social Media Plus gives your desktop AI copilot a repeatable way to do LinkedIn work through your signed-in browser. You supply your profile, objectives and audience. The project supplies workflows, a dashboard and local records. Codex or Claude reads those instructions, uses its available browser tools and saves the results.
+Social Media Plus gives your desktop AI copilot a repeatable way to manage social media through your signed-in browser. You supply your profile, objectives and audience. The project supplies workflows, a dashboard and local records. Codex or Claude reads those instructions, uses its available browser tools and saves the results.
+
+LinkedIn is the first supported platform. Instagram, YouTube and other integrations are under development and coming soon. This guide covers the LinkedIn workflows available at launch.
 
 ## Find people and join conversations
 

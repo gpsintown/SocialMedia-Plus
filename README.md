@@ -1,8 +1,10 @@
-![Social Media Plus: automate LinkedIn with your desktop AI copilot](docs/images/banner.svg)
+![Social Media Plus: automate social media with your desktop AI copilot](docs/images/banner.svg)
 
 # Social Media Plus
 
-**Social Media Plus is an open-source platform for automating LinkedIn activities through your desktop AI copilot.** It gives Codex or Anthropic’s Claude Desktop / Cowork the workflows, dashboard and local records to find relevant people, join conversations, write content, publish and schedule through your signed-in browser.
+**Social Media Plus is an open-source platform for automating social media activities through your desktop AI copilot.** It gives Codex or Anthropic’s Claude Desktop / Cowork the workflows, dashboard and local records to find relevant people, join conversations, write content, publish and schedule through your signed-in browser.
+
+🚀 **LinkedIn is available at launch. Instagram, YouTube and other platform integrations are under development and coming soon.** The workflows below describe what you can do with LinkedIn today.
 
 Your copilot uses your profile, niche, audience and objectives to decide which topics and people are relevant. It reads the discussion before commenting, uses your writing preferences when drafting, and saves what it did so the next session can continue from there.
 
@@ -194,10 +196,10 @@ Read [security](SECURITY.md), [contributing](CONTRIBUTING.md) and [third-party n
 ## 🌱 What's next
 
 - Direct LinkedIn OAuth, API publishing and analytics adapters.
-- Instagram, YouTube and additional social platforms.
+- Instagram, YouTube and other platform integrations are under development.
 - Further improvements to onboarding and desktop-host integration.
 
-These are planned directions, not enabled integrations. Contributions and focused issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+These integrations are not available in the current release. Contributions and focused issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 

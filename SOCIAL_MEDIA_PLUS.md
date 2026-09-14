@@ -1,6 +1,6 @@
 # Social Media Plus command guide
 
-Social Media Plus lets your desktop AI copilot do LinkedIn work through your signed-in browser. Use these commands to find relevant people, engage connections and observed followers, reply to conversations, prepare content and assets, and publish or schedule finished work. Your profile, niche, audience and objectives guide the choices. The dashboard saves requests and results in the same local workspace.
+Social Media Plus lets your desktop AI copilot manage social media through your signed-in browser. LinkedIn is supported at launch; other platform integrations are under development. The commands below cover the current LinkedIn workflows. Use these commands to find relevant people, engage connections and observed followers, reply to conversations, prepare content and assets, and publish or schedule finished work. Your profile, niche, audience and objectives guide the choices. The dashboard saves requests and results in the same local workspace.
 
 Open the cloned folder in your chosen assistant and type `SMP INSTALL`. Follow [initial setup](docs/getting-started.md), then [personalize your workspace](docs/personalization.md). Verify your browser session before requesting LinkedIn actions. Developer apps are optional; their settings form does not connect an API integration in this release. Setup itself sends nothing.
 
