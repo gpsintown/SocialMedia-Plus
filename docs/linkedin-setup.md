@@ -1,10 +1,12 @@
-# LinkedIn developer setup
+# Optional LinkedIn developer setup
 
 Checked against official documentation on 14 September 2026. Portal labels and access programs can change; the products and granted scopes shown for your own app are authoritative.
 
-## What works in this release
+## Use the browser workflow first
 
-The dashboard saves two sets of LinkedIn app settings to your private `.env.local`. It does **not** implement OAuth, exchange authorization codes, obtain tokens, verify a LinkedIn connection, or publish through the LinkedIn API. The reserved callback addresses below are configuration examples, not working routes. You can use the editorial workspace and a supported, signed-in desktop browser workflow without creating developer apps.
+For the current LinkedIn workflow, your copilot uses supported browser tools and your signed-in account. It can read discussions, comment, reply and submit authorized content through the visible interface. Follow [initial setup](getting-started.md) to verify that access; you can skip developer apps for browser work.
+
+This guide prepares optional developer configuration for future API adapters. The dashboard saves two sets of app settings to your private `.env.local`. It does not complete OAuth, obtain tokens or publish through the LinkedIn API. The reserved callback addresses below are examples, not working routes.
 
 The two-app arrangement separates identity from publishing. It is a project configuration choice; LinkedIn does not require two apps for every integration. You may complete only the app setup you need. Do not put the same secret into unrelated apps merely to make both dashboard cards appear configured.
 

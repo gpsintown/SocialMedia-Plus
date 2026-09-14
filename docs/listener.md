@@ -1,6 +1,6 @@
 # Dashboard queue listener
 
-The listener is a recurring task owned by the user's desktop assistant. It checks for dashboard requests and processes them through the selected host's available tools. It is not a Python model worker, operating-system service, browser extension, or filesystem event that independently launches an assistant.
+The listener lets your desktop AI pick up requests you make in the dashboard. It runs as a recurring task in the host, checks the local queue and processes a saved request. It does not monitor LinkedIn notifications or create new engagement sessions on its own. Without a supported host schedule, use `SMP RUN QUEUE` in your project chat.
 
 ## What installation does
 
@@ -17,15 +17,15 @@ During a live `SMP INSTALL` chat, the assistant should:
 
 The installation request authorizes this bounded listener setup. It does not authorize the listener to invent social tasks, publish drafts, or send messages without an in-scope user invocation.
 
-## File and ledger contract
+## Where requests are stored
 
 | Record | Meaning |
 | --- | --- |
-| `data/dashboard-queue.json` | Advisory snapshot: sequence and pending request identifiers. A change tells the assistant to query the ledger. |
-| `data/socialmediaplus.sqlite3` | Authoritative queue, request parameters, binding, version snapshot, transition history, and result. |
+| `data/dashboard-queue.json` | Notification snapshot with pending request IDs. It tells the assistant to read the database. |
+| `data/socialmediaplus.sqlite3` | Main record of requests, parameters, host binding, saved content version, state changes and results. |
 | `config/dashboard.json` | This clone's selected desktop host, task binding, and listener metadata. |
 
-Read and mutate records through the CLI or MCP. Never rewrite the mirror to approve, complete, delete, or retry a request. Always query the ledger, even if the file was unchanged or a previous mirror update failed.
+Read and mutate records through the CLI or MCP. Do not edit the notification file to approve, complete, delete or retry work. Read the database through the tools even when the file has not changed or a notification update failed.
 
 The included MCP tools are `smp_status`, `smp_queue_list`, `smp_queue_get`, `smp_queue_transition`, and `smp_queue_expire`. They manage local records; they do not call LinkedIn or run an assistant model.
 

@@ -1,6 +1,6 @@
 # 🚀 Initial setup
 
-Social Media Plus runs from a local folder. Your desktop AI host provides reasoning and supported tools; Python and SQLite keep the durable records. No separate LLM API key, PostgreSQL or Docker is required.
+Set up Social Media Plus so your desktop AI can run LinkedIn workflows from your local folder. You will start the dashboard, connect the local tools, add your profile and verify browser access. The copilot uses that context to find relevant discussions, write content and carry out the actions you request. No separate LLM API key, PostgreSQL or Docker is required.
 
 ## 1. Check the requirements
 
@@ -44,11 +44,11 @@ If scheduled pickup is unavailable, send `SMP RUN QUEUE` in the project chat. A 
 
 Follow [personalization](personalization.md) to set your objectives, audience, evidence, writing style, privacy boundaries and cadence. Start with a short brief and a few samples of your own writing. A résumé is optional unless you choose a workflow that needs one.
 
-## 6. Set up LinkedIn
+## 6. Verify your LinkedIn browser session
 
-For browser-based work, use the supported host browser tools and your own authenticated LinkedIn session. Verify the account before requesting an external action.
+Open LinkedIn in your own signed-in Chrome session. Ask the copilot to use its supported browser tool to verify the account without sending anything. A successful check means it can reach the intended profile; it does not grant permission to publish or contact people.
 
-For developer configuration, open **LinkedIn setup** in the dashboard and follow the [two-app LinkedIn developer guide](linkedin-setup.md). It explains products, permissions and restricted-access requirements. Saving credentials writes ignored `.env.local`; it does **not** complete OAuth or connect an API publishing adapter in this release. Developer credentials are not required for browser-based drafting and engagement.
+You can skip developer configuration for browser work. To prepare future API settings, open **LinkedIn setup** in the dashboard and follow the [two-app LinkedIn developer guide](linkedin-setup.md). It explains products, permissions and restricted-access requirements. Saving credentials writes ignored `.env.local`; it does **not** complete OAuth or connect an API publishing adapter in this release. Developer credentials are not required for browser-based drafting and engagement.
 
 ## 7. Start with a preview
 
@@ -57,7 +57,7 @@ SMP START
 SMP ENGAGE 30 preview
 ```
 
-Preview prepares suggestions without sending comments. For weekly content, use `SMP WEEK <Monday date>`, review the finished batch, then use `SMP SCHEDULE <the same Monday date>` when you want to authorize that exact batch.
+Preview lets you check whether the selected discussions and proposed replies fit your objectives. It sends no comments. For weekly content, use `SMP WEEK <Monday date>`, review the finished batch, then use `SMP SCHEDULE <the same Monday date>` when you want to authorize that exact batch.
 
 Read the [full command guide](../SOCIAL_MEDIA_PLUS.md) and [command map](../config/chat-commands.json). A live engagement command authorizes its documented session actions; installing the project does not grant standing publishing or outreach permission.
 

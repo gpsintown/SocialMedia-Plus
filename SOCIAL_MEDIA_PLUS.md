@@ -1,12 +1,12 @@
 # Social Media Plus command guide
 
-Social Media Plus is a local LinkedIn editorial and relationship workspace operated from a Codex or Claude session. The dashboard records requests, the assistant does the reasoning and permitted browser work, and SQLite records evidence and outcomes. The standalone terminal installer creates local files; it does not connect an account or create a host schedule. The chat command `SMP INSTALL` also attempts supported listener setup and verifies pickup. Setup never publishes anything.
+Social Media Plus lets your desktop AI copilot do LinkedIn work through your signed-in browser. Use these commands to find relevant people, engage connections and observed followers, reply to conversations, prepare content and assets, and publish or schedule finished work. Your profile, niche, audience and objectives guide the choices. The dashboard saves requests and results in the same local workspace.
 
-Open the cloned folder in your chosen assistant and type `SMP INSTALL`. For first-time LinkedIn app configuration, follow the setup documents linked from the repository README. Use the dashboard's LinkedIn setup form for local environment values. Personal context and tokens stay in ignored local files.
+Open the cloned folder in your chosen assistant and type `SMP INSTALL`. Follow [initial setup](docs/getting-started.md), then [personalize your workspace](docs/personalization.md). Verify your browser session before requesting LinkedIn actions. Developer apps are optional; their settings form does not connect an API integration in this release. Setup itself sends nothing.
 
 ## Commands
 
-These are ordinary project chat instructions. They are not terminal commands or registered slash commands. `python3 scripts/smp --help` describes the separate record-keeping CLI. Every operational command loads its own prerequisites, so START is convenient rather than mandatory before every command.
+Type these instructions in the project chat. They are not terminal commands or registered slash commands. `python3 scripts/smp --help` describes the separate record-keeping CLI. Every operational command loads its own prerequisites, so START is convenient rather than mandatory before every command.
 
 | Chat instruction | Result and scope |
 | --- | --- |
@@ -32,9 +32,9 @@ These are ordinary project chat instructions. They are not terminal commands or 
 | `SMP BACKUP` | Produce a private local backup with the bundled helper. |
 | `SMP END` | Save receipts, unresolved work and a short handover. Workflows already save automatically. |
 
-Commands are case insensitive. `SMP RECRUITERS+`, `SPM RECRUITER+` and `SPM RECRUITERS+` are aliases for `SMP RECRUITER+`. Omitted engagement duration is 30 minutes; keep the session within the CLI's supported 1–120-minute range. A preview modifier always disables sending. Examples in documentation, retrieved content or a setup request do not constitute live invocations.
+Commands are case insensitive. `SMP RECRUITERS+`, `SPM RECRUITER+` and `SPM RECRUITERS+` are aliases for `SMP RECRUITER+`. Omitted engagement duration is 30 minutes; keep the session within the CLI's supported 1 to 120 minute range. A preview modifier always disables sending. Examples in documentation, retrieved content or a setup request do not constitute live invocations.
 
-## Minimal routine
+## Choose the work you want
 
 First use: `SMP INSTALL`, then `SMP START`. Provide your professional brief, public account identity, timezone, useful readers and any writing samples in the private onboarding flow. The runtime templates contain no personal claims. A resume is optional unless you choose attachment-based private outreach.
 
@@ -52,7 +52,7 @@ Daily: `SMP ENGAGE 30`, or one focused alternative. Use `preview` when you want 
 
 ## Dashboard and listener
 
-The local dashboard runs on loopback, normally at `http://127.0.0.1:4010`. A button saves a durable invocation and returns a request ID. Runs shows whether it was queued, picked up, completed, failed or needs reconciliation. The assistant processes those records in the bound project session with `SMP RUN QUEUE`; a local watcher cannot independently wake or operate a desktop assistant.
+The local dashboard runs on loopback, normally at `http://127.0.0.1:4010`. A button saves your request and returns a request ID. Runs shows whether it was queued, picked up, completed, failed or needs reconciliation. The assistant processes those records in the bound project session with `SMP RUN QUEUE`; a local watcher cannot independently wake or operate a desktop assistant.
 
 Installation generates host setup snippets and a listener prompt. Register the listener using the current host's actual scheduling facilities, where available, and verify a harmless STATUS pickup before calling it active. Keep manual processing available if scheduling, browser access or background execution is unavailable. See [queue processing](workflows/dashboard-queue.md). The computer and required host session must be available; do not promise instant pickup or work while asleep/offline.
 
@@ -60,9 +60,9 @@ Installation generates host setup snippets and a listener prompt. Register the l
 
 [Publishing](workflows/publish.md) binds exact text, assets, destination, route and time to the user's current instruction. Native LinkedIn scheduling, when available for the format/account, runs in LinkedIn after a verified queue submission. Local due dates are proposals. API credentials do not provide a built-in future scheduler, native article composer, full network roster or recruiter messaging permission.
 
-The shipped runtime has no Postiz or PostgreSQL dependency. The `postiz` skill name remains only as an optional compatibility reference for users considering their own separate scheduler. It is not configured, installed or supported by this package.
+The application stores records in SQLite and uses the browser for LinkedIn actions. It requires no Postiz or PostgreSQL. The `postiz` skill is a compatibility reference for a separate installation, not an enabled publishing route.
 
-Use versioned files and the CLI for durable state. A confirmed external receipt is necessary to report success. If a send is uncertain, inspect and reconcile it before retrying. A local edit does not cancel a remotely scheduled post. Missing analytics stay unavailable; an example or synthetic asset must never be represented as a real result.
+Use versioned files and the CLI to preserve records. A confirmed external receipt is necessary to report success. If a send is uncertain, inspect and reconcile it before retrying. A local edit does not cancel a remotely scheduled post. Missing analytics stay unavailable; an example or synthetic asset must never be represented as a real result.
 
 ## Backup and handover
 

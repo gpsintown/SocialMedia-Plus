@@ -1,6 +1,6 @@
 # Prerequisites
 
-Social Media Plus is a local folder application operated by your selected desktop assistant. It keeps the dashboard, drafts, records, and workflow instructions in one clone. LinkedIn is the active platform; other platform cards describe future integrations.
+To run LinkedIn workflows, your desktop AI needs access to the project folder and a supported browser tool for your signed-in account. Social Media Plus supplies the dashboard, skills and local records. LinkedIn is the current platform; the other cards are placeholders for planned integrations.
 
 ## Required
 
@@ -19,7 +19,7 @@ No PostgreSQL, Postiz, Redis, Docker, or separate LLM API key is needed for the 
 - Git or GitHub Desktop for cloning and updating. An extracted ZIP also works. GitHub Desktop is a Git client, not the assistant that executes social workflows. [GitHub Desktop documentation](https://docs.github.com/en/desktop/overview/about-github-desktop)
 - Node.js and npm only for rebuilding the dashboard source in `ui/`; the release includes its built UI.
 - Your own LinkedIn developer applications if you want to prepare API credentials. Their settings can be saved, but this release has no OAuth or API-publishing adapter. Follow [LinkedIn setup](linkedin-setup.md).
-- Your own profile, resume, post history, and analytics exports when relevant. Start with the provided blank templates; none of the original operator's material is included.
+- Your profile brief, writing samples, post history and analytics exports when relevant. Start with the blank templates. A résumé is needed only for workflows that use it.
 - Additional host tools for producing PDFs, images, or other assets. The assistant should check available capabilities and use the documented fallback when a tool is missing.
 
 ## Check the machine before setup

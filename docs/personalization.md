@@ -1,6 +1,6 @@
 # 🎛️ Make the workspace yours
 
-Your profile is the brief the AI works from: what you know, who you want to reach, how you write and what should stay private. Installation creates editable, Git-ignored working files from the public [templates](../templates/). You can update them through your project chat or edit them directly.
+Your profile guides the work: which people the copilot looks for, which conversations it joins, what it writes and which opportunities it considers. Set your niche, intended audience, objectives, writing style and private boundaries. Installation creates editable, Git-ignored working files from the public [templates](../templates/). You can update them through your project chat or edit them directly.
 
 ## 1. Give the agent a starting brief
 
@@ -39,7 +39,7 @@ Keep JSON valid when editing it directly. Ask the agent to review consistency ac
 
 Supply two or three samples you wrote and are comfortable sharing with your chosen AI host. Explain what you like about them. Ask for a short draft, then edit the parts that do not sound like you.
 
-Feedback such as “use a concrete example before the conclusion,” “less formal,” or “I would never say this phrase” is more useful than “make it human.” Ask the agent to save the durable preference in your voice file. Review [the profile workflow](../workflows/profile.md) for evidence and calibration handling.
+Tell the copilot what to change: “use a concrete example before the conclusion,” “less formal,” or “I would never say this phrase.” Ask the agent to save the preference in your voice file. Review [the profile workflow](../workflows/profile.md) for evidence and calibration handling.
 
 A style preference never creates personal experience: a confident tone is not permission to invent a result, anecdote or quotation. Resolve conflicting facts before turning them into public claims.
 
@@ -51,6 +51,6 @@ Local storage does not mean offline AI processing. Information you give your des
 
 ## 5. Test the fit before going live
 
-Ask for a draft or use `SMP ENGAGE 30 preview`. Check accuracy, tone, audience relevance and privacy. Refine your files as your objectives evolve; the workspace keeps context across sessions.
+Ask for a draft or use `SMP ENGAGE 30 preview`. Check both the writing and the selection: are these the people and conversations you want to spend time on? Review accuracy, tone and privacy too. Refine your files as your objectives evolve; the workspace keeps context across sessions.
 
 Use the [command guide](../SOCIAL_MEDIA_PLUS.md) to understand each action's scope. `SMP WEEK` prepares content; `SMP SCHEDULE` authorizes a finished batch. Live engagement commands authorize their documented session actions. Optional outreach needs its own explicit scope and supporting setup; personalization alone authorizes no external action.

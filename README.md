@@ -1,81 +1,90 @@
-![Social Media Plus — Your voice. Your goals. Your call.](docs/images/banner.svg)
+![Social Media Plus: automate LinkedIn with your desktop AI copilot](docs/images/banner.svg)
 
-# Social Media Plus ✨
+# Social Media Plus
 
-**Turn your experience into useful LinkedIn content and conversations—with AI assistance and control over what happens next.**
+**Social Media Plus is an open-source platform for automating LinkedIn activities through your desktop AI copilot.** It gives Codex or Anthropic’s Claude Desktop / Cowork the workflows, dashboard and local records to find relevant people, join conversations, write content, publish and schedule through your signed-in browser.
 
-A local, open-source editorial and relationship workspace for **Codex** and **Claude Desktop / Cowork**. Bring your preferred desktop AI, choose a folder, and work through a dashboard or ordinary chat commands. Your profile, voice, goals and previous decisions give each session a place to start.
+Your copilot uses your profile, niche, audience and objectives to decide which topics and people are relevant. It reads the discussion before commenting, uses your writing preferences when drafting, and saves what it did so the next session can continue from there.
 
-🏠 Local records · 🧠 Your desktop AI · 🎛️ Your rules · 🔓 MIT licensed
+The AI operates LinkedIn’s visible interface through the browser tools available in your desktop session. That includes its post and article editors and native scheduling controls, where available for your account and content format. The current workflow does not require a LinkedIn API integration or a separate LLM API key.
 
-**[🚀 Initial setup](docs/getting-started.md) · [⌨️ Commands](SOCIAL_MEDIA_PLUS.md) · [🎨 Personalize](docs/personalization.md) · [🔗 LinkedIn setup](docs/linkedin-setup.md) · [📖 Architecture](docs/architecture.md)**
+**[🚀 Initial setup](docs/getting-started.md) · [⌨️ Commands](SOCIAL_MEDIA_PLUS.md) · [🎨 Personalize](docs/personalization.md) · [📖 How the workflows work](docs/how-it-works.md)**
 
 ![Social Media Plus home dashboard with LinkedIn and upcoming platform cards](docs/images/dashboard-home.png)
 
-## 💡 What does this solve?
+## 💬 What you can use it for
 
-Building a professional presence often means repeating your background to an AI, correcting generic drafts, juggling tools and trying to remember what you already published or who you spoke with. Social Media Plus puts that work into a durable workspace.
-
-| The friction | How the workspace helps |
+| Activity | What your copilot does |
 | --- | --- |
-| Starting from a blank prompt every week | Reuse your profile, objectives, evidence and editorial preferences |
-| Drafts that sound like everyone else | Calibrate against your writing samples and save your corrections |
-| Ideas scattered across chats | Prepare a week of content with tracked revisions and review |
-| Conversations without follow-through | Keep observed relationships, conversation history and follow-up context |
-| Unclear approvals or duplicate attempts | Record exact versions, authorization, receipts and uncertain outcomes |
-| Guessing what worked | Review supplied performance data and keep missing metrics unavailable |
+| Find relevant people | Looks for people and current discussions that fit your niche, audience and objectives. Saves observed context for later sessions. |
+| Engage your network | Reads posts from existing connections and observed followers, checks your interaction history, and writes relevant comments and replies. |
+| Continue conversations | Revisits recorded threads, checks for visible replies, and responds within the session you requested. |
+| Create content | Researches topics, drafts posts and native articles, creates final image and carousel PDF assets, and reviews the work against your voice and evidence. Asset creation uses available host tools. |
+| Publish and schedule | Opens LinkedIn in your signed-in browser, submits the exact content you authorized, and checks the published item or native schedule. |
+| Like and repost | Uses `SMP ENGAGE+` for selective likes and occasional attributed reposts with your perspective. |
+| Track opportunities | Records relevant hiring opportunities and contact evidence. Optional recruiter outreach requires your own goals, résumé and explicit setup. |
+| Review results | Keeps content versions, observed comments/replies, action receipts and supplied metrics so you can review outcomes and follow up. |
 
-The AI is the reasoning layer: it researches, proposes, writes and reviews using the tools available in your selected desktop session. Python and SQLite handle deterministic records. **No separate LLM API key, PostgreSQL, Postiz or Docker is required.**
+You can request a 30-minute engagement session, focus only on replies, or prepare a full week of content. The [command guide](SOCIAL_MEDIA_PLUS.md) explains each mode and what it authorizes.
 
-## 🧰 Capabilities
+Browser actions require a compatible host tool and your signed-in account. See [release verification](docs/release-verification.md) for what has been tested; verify browser access and scheduled request pickup in your own installation. Follow-up happens during requested sessions; the package does not continuously watch every comment or collect a complete follower roster. Sharing into LinkedIn Groups has no dedicated workflow in this release. The relationship groups in local records are organizational categories.
 
-| Capability | What you can do | Availability |
-| --- | --- | --- |
-| Personal profile and voice | Set audiences, goals, writing style, evidence and privacy boundaries | Included |
-| Weekly editorial workflow | Prepare sourced posts, articles and carousel briefs; revise a finished batch | Included workflows; research and asset tools depend on host |
-| Five-lens council review | Review an argument from distinct perspectives and preserve dissent | Included roles; sequential fallback when delegation is unavailable |
-| Contextual engagement | Find relevant discussions and prepare or send scoped replies | Requires supported browser tools, login and live authorization |
-| Content handoff | Review exact content and authorize publishing or scheduling | Browser route depends on host and LinkedIn capabilities |
-| Relationship and performance records | Import observations and exports; review actual available metrics | Included; no automatic complete follower or analytics feed |
-| Dashboard and durable queue | Request operations and inspect run state | Included |
-| Local MCP and portable skills | Connect the queue and workflows to your desktop host | Included; host setup required |
-| LinkedIn developer settings | Save two-app configuration in private `.env.local` | Included configuration storage; OAuth/API adapters planned |
-| Instagram, YouTube and more | Extend the same workspace to other platforms | Coming soon |
+## 🖥️ One dashboard for the work
 
-### 🖥️ Inside the application
+The dashboard brings the records together:
 
-**Actions:** choose a workflow without remembering every command.
+- **Content and Assets:** drafts, revisions, articles, images and documents associated with your content.
+- **Engagement and Network:** recorded actions, observed relationships and conversation history.
+- **Opportunities:** saved openings and the evidence behind a potential match.
+- **Insights:** analysis of available observations and imported metrics.
+- **Runs:** the requests you made, their progress and their recorded results.
+
+Choose an operation on the Actions screen or type its command in the project chat. Both use the same workspace.
 
 ![Application Actions screen showing available workflow commands](docs/images/dashboard-actions.png)
 
-**LinkedIn setup:** configure separate publishing and identity apps using the linked developer guide.
+## 🧠 What the AI does, and what this project provides
 
-![LinkedIn settings screen with blank publishing and identity app credentials](docs/images/linkedin-settings.png)
-
-Screenshots show a fresh, empty workspace. **Saving developer credentials does not connect a LinkedIn account.** This release uses an authorized browser session for external LinkedIn actions; direct OAuth/API publishing and analytics adapters are planned.
-
-## 🧠 AI assistance, with explicit control
-
-You decide what the workspace knows, which outcomes matter, what can become public and which actions you authorize. The dashboard saves requests; your desktop agent picks them up, applies the project skills and records the result.
+Your desktop copilot does the reasoning and browser work. Social Media Plus supplies the instructions and records it needs: your profile, writing preferences, content history, relationships, action scope and follow-ups. The included skills cover the workflows; five review roles help check substantial drafts.
 
 ```mermaid
 flowchart LR
-    A[Your profile, voice and goals] --> B[Desktop AI + project skills]
-    C[Chat command or dashboard request] --> B
-    B --> D[Research, drafts and review]
-    D --> E[Your feedback and action scope]
-    E --> F[Authorized action through host tools]
-    F --> G[Local records and confirmed receipts]
-    G --> B
+    A[Your profile and objectives] --> B[Codex or Claude]
+    C[Dashboard request or chat command] --> B
+    B --> D[Project skills and review]
+    D --> E[LinkedIn through your browser]
+    E --> F[Saved content, conversations and results]
+    F --> B
 ```
 
-- **Preview when you want suggestions:** `SMP ENGAGE 30 preview` sends nothing.
-- **Authorize a bounded session:** `SMP ENGAGE 30` permits the contextual comments and replies documented for that session.
-- **Review before scheduling:** `SMP SCHEDULE` covers the exact finished batch presented to you.
-- **See what happened:** Runs and stored receipts distinguish queued requests, completed actions and uncertain attempts. Reconcile uncertainty before retrying.
-- **Keep your context editable:** change your goals, voice, cadence and boundaries in your own local files.
+For example, `SMP NETWORK 30` asks your copilot to spend a bounded session engaging existing connections and observed followers. It checks the saved history, reads relevant current discussions, sends comments or replies within that scope, then records confirmed results. A later session uses those records when deciding where to follow up.
 
-Installation does not grant standing publishing or outreach permission. Local records remain in your folder; AI inference and browser services may process supplied context under your chosen host's settings. This is not an offline-only AI system.
+The local application uses Python and SQLite. No PostgreSQL, Postiz or Docker is needed. The MCP server connects your assistant to local status and queued requests; it is not a LinkedIn API connector. Read [how it works](docs/how-it-works.md) for the complete flow or [architecture](docs/architecture.md) for implementation details.
+
+## 🎛️ You set the scope
+
+Choose the audience, objectives, tone, time budget and actions you want. Use `SMP ENGAGE 30 preview` for suggestions without sending anything. Use `SMP ENGAGE 30` when you want the copilot to select and send contextual comments and replies during that session, without asking you to approve each comment. The duration is a limit, not an action quota; a session may find nothing suitable to send.
+
+For content, `SMP WEEK` prepares a batch. Review it, request edits, then use `SMP SCHEDULE` to authorize the finished text, assets, destination and times. The agent checks LinkedIn’s actual result before recording an item as published or scheduled. An uncertain submission stays unresolved until checked, so a retry does not blindly send it again.
+
+Installing the project grants no standing permission to publish or contact people. Your copilot performs the browser actions under the scope you requested.
+
+## 🎨 Set your profile, audience and objectives
+
+Tell your copilot what you do, which niche you work in, who you want to reach and what you want those conversations to achieve. These choices guide both content and engagement. Supply a few writing samples, set the tone you prefer and name any topics or details that must stay private. Correct a draft and ask the copilot to save the preference for next time.
+
+| Personalize | Examples | Private working file created on install |
+| --- | --- | --- |
+| Objectives and audience | Peer conversations, teaching, professional visibility, relevant readers | `profile/profile.json` |
+| Professional context | Topics you know, experience you can share, exclusions | `profile/context.md` |
+| Tone and style | Warm or formal, paragraph length, humor, phrases to avoid | `profile/voice.md` |
+| Evidence | Sources, caveats and verified wording for personal claims | `profile/claims.json` |
+| Public boundaries | Confidential topics, private career plans, review requirements | `profile/editorial-policy.md` |
+| Rhythm and content mix | Timezone, weekly frequency, pillars and posting windows | `config/settings.json` |
+
+For example: “Write in plain language for product leads. Use specific examples, avoid sales phrasing, and keep client details private.” Your preference should guide the writing without inventing experiences or results.
+
+**[Read the personalization guide](docs/personalization.md)** for a starter prompt, file links and a way to test the fit. A résumé is optional unless you choose a workflow that needs one.
 
 ## 🚀 Get started
 
@@ -92,7 +101,7 @@ Open that folder in your desktop agent, then send this in the project chat:
 Read AGENTS.md and SOCIAL_MEDIA_PLUS.md in this folder. SMP INSTALL
 ```
 
-The agent initializes private files, starts the application and helps configure MCP and a scheduled queue listener where the host supports it. Open [localhost:4010](http://127.0.0.1:4010) and verify a harmless STATUS request is processed. If scheduled pickup is unavailable, use `SMP RUN QUEUE` in chat.
+The agent creates your private workspace, starts the dashboard and prepares local tool registration. It connects and verifies those tools where your host supports them. Where the host supports scheduling, it also sets up a recurring check for dashboard requests. Open [localhost:4010](http://127.0.0.1:4010) and verify a harmless STATUS request is processed. If scheduled pickup is unavailable, use `SMP RUN QUEUE` in chat.
 
 **Follow the [complete initial setup guide](docs/getting-started.md)** for each step, including verification and your first preview.
 
@@ -100,7 +109,7 @@ The agent initializes private files, starts the application and helps configure 
 | --- | --- |
 | [Codex setup](docs/codex-setup.md) | Local project, skills, MCP and host scheduling |
 | [Claude Desktop / Cowork setup](docs/claude-setup.md) | Folder access and Claude-specific setup |
-| [LinkedIn developer setup](docs/linkedin-setup.md) | Two apps, products, permissions and restricted-access requirements |
+| [Optional LinkedIn developer setup](docs/linkedin-setup.md) | Prepare future API settings: two apps, products and permissions |
 | [Queue listener setup](docs/listener.md) | Scheduled pickup, verification and manual fallback |
 | [Personalization guide](docs/personalization.md) | Your profile, voice, objectives and privacy boundaries |
 
@@ -131,28 +140,24 @@ These are **chat instructions**, not shell commands. Read the [complete command 
 | `SMP REWORK <week or item>` | Revise an existing batch or item |
 | `SMP SCHEDULE <week or item>` | Authorize the exact finished content for scheduling |
 | `SMP ENGAGE 30 preview` | Prepare a conversation shortlist and reply drafts; send nothing |
-| `SMP ENGAGE 30` | Run a bounded, authorized comment/reply session |
+| `SMP ENGAGE 30` | Read relevant discussions and send contextual comments/replies for the session |
+| `SMP NETWORK 30` | Focus on existing connections and observed followers |
+| `SMP DISCOVER 30` | Find relevant new people and discussions |
+| `SMP REPLIES 30` | Check visible replies in conversations already joined and respond |
+| `SMP ENGAGE+ 30` | Add selective likes and occasional attributed reposts |
+| `SMP RECRUITER+ 30` | Run the optional configured hiring outreach workflow |
 | `SMP REVIEW <Monday date>` | Review available outcomes and lessons |
 | `SMP RUN QUEUE` | Process pending dashboard requests in the current host session |
 
-A simple weekly routine is **START → WEEK → review the batch → SCHEDULE**. For daily conversations, use **START → ENGAGE 30**, adding `preview` when you want drafts only. Focused relationship modes and optional outreach are explained in the full guide.
+Each week, start the workspace, prepare your content with WEEK, review it and request SCHEDULE. For daily engagement, use START followed by ENGAGE 30. Add `preview` when you only want suggestions.
 
-## 🎨 Make it sound like you
+## 🔗 LinkedIn developer settings are optional
 
-Start with your actual background and a few samples of your own writing. Tell the AI who you want to reach, why you want to reach them and which details should never become public. Then correct a draft and save what the agent learns about your preferences.
+The current browser workflow uses your own signed-in LinkedIn session. You can also save two sets of developer-app settings for future API adapters. Follow the [LinkedIn developer guide](docs/linkedin-setup.md) for app creation, products and permissions.
 
-| Personalize | Examples | Private working file created on install |
-| --- | --- | --- |
-| Objectives and audience | Peer conversations, teaching, professional visibility, relevant readers | `profile/profile.json` |
-| Professional context | Topics you know, experience you can share, exclusions | `profile/context.md` |
-| Tone and style | Warm or formal, paragraph length, humor, phrases to avoid | `profile/voice.md` |
-| Evidence | Sources, caveats and verified wording for personal claims | `profile/claims.json` |
-| Public boundaries | Confidential topics, private career plans, review requirements | `profile/editorial-policy.md` |
-| Rhythm and content mix | Timezone, weekly frequency, pillars and posting windows | `config/settings.json` |
+![LinkedIn settings screen with blank publishing and identity app credentials](docs/images/linkedin-settings.png)
 
-For example: “Write in plain language for product leads. Use specific examples, avoid sales phrasing, and keep client details private.” Your preference should guide the writing without inventing experiences or results.
-
-**[Read the step-by-step personalization guide](docs/personalization.md)** for a starter prompt, template links and voice calibration. A résumé is optional unless you enable a workflow that needs one.
+Saving these fields stores configuration in private `.env.local`. It does not complete OAuth or enable API publishing. You can skip this step for browser work.
 
 ## 🗂️ Explore the project
 
@@ -173,7 +178,7 @@ See [architecture](docs/architecture.md) for the queue, file notification, SQLit
 
 ## 🔒 Privacy and sharing
 
-The public project ships blank templates. Your populated profile, résumé, credentials, database, imports and runtime state belong in your private workspace. **Commit `.env.example`, never a populated `.env.local`.**
+The public project ships blank templates. Your workspace is stored locally, but your chosen AI host and browser services may process the context you supply under their account settings; the model does not necessarily run offline. Your populated profile, résumé, credentials, database, imports and runtime state belong in your private workspace. **Commit `.env.example`, never a populated `.env.local`.**
 
 To prepare a clean source export:
 
@@ -192,7 +197,7 @@ Read [security](SECURITY.md), [contributing](CONTRIBUTING.md) and [third-party n
 - Instagram, YouTube and additional social platforms.
 - Further improvements to onboarding and desktop-host integration.
 
-These are planned directions, not enabled integrations. Contributions and focused issues are welcome—see [CONTRIBUTING.md](CONTRIBUTING.md).
+These are planned directions, not enabled integrations. Contributions and focused issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 

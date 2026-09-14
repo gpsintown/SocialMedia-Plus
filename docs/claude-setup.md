@@ -1,6 +1,6 @@
 # Claude Desktop / Cowork setup
 
-The intended Claude route is a desktop session that can use the selected local folder and the included stdio MCP server. Claude Code is a practical alternative when your Cowork session lacks those capabilities. A cloud-only session is not equivalent to a local desktop runtime.
+Connect Claude Desktop / Cowork to this local folder so it can read your profile, process dashboard requests and use available browser tools for LinkedIn work. Verify that the session can reach the included local MCP server. Claude Code is an alternative when your Cowork session lacks the required local access.
 
 ## 1. Check the execution environment
 
@@ -48,7 +48,7 @@ The `.claude/skills` and `.claude/agents` copies support **Claude Code** convent
 
 When the current host can delegate, it can use the included council role files with a shared evidence packet. Otherwise perform a labelled sequential review. Native custom-agent discovery in Claude Code uses `.claude/agents`; copying those files does not guarantee equivalent Cowork runtime behavior. [Claude Code subagents](https://code.claude.com/docs/en/sub-agents)
 
-## 5. Schedule only a listener that can reach this folder
+## 5. Set up dashboard request pickup
 
 Have Claude read `runtime/install/listener-prompt.md` and [listener.md](listener.md). Use a native scheduler only if its next run can reach the same local folder, tools, and queue. Save the actual scheduler receipt and verify pickup with a harmless **Status** request.
 

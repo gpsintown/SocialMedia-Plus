@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
-<title id="title">Social Media Plus — Your voice. Your goals. Your call.</title><desc id="desc">An AI-assisted LinkedIn workspace with local records and human control.</desc>
+<title id="title">Social Media Plus: Automate LinkedIn with your desktop AI copilot.</title><desc id="desc">Browser workflows for content, conversations and follow-ups.</desc>
 <rect width="1280" height="420" rx="24" fill="#102c27"/>
 <circle cx="1150" cy="60" r="250" fill="#19463c"/><circle cx="1160" cy="80" r="175" fill="none" stroke="#487363" stroke-width="1"/>
 <g font-family="Arial, Helvetica, sans-serif"><rect x="64" y="55" width="48" height="48" rx="14" fill="#d8ed91"/><path d="M88 67v24M76 79h24" stroke="#102c27" stroke-width="4"/>
 <text x="130" y="88" fill="#eaf0e5" font-size="25" font-weight="700">SOCIAL MEDIA PLUS</text>
-<text x="64" y="177" fill="#fffdf3" font-size="53" font-weight="700">Your voice. Your goals.</text><text x="64" y="239" fill="#d8ed91" font-size="53" font-weight="700">Your call.</text>
-<text x="66" y="286" fill="#c0d3c9" font-size="22">AI-assisted LinkedIn. A workspace you control.</text>
+<text x="64" y="177" fill="#fffdf3" font-size="53" font-weight="700">Automate LinkedIn</text><text x="64" y="239" fill="#d8ed91" font-size="53" font-weight="700">with your desktop AI.</text>
+<text x="66" y="286" fill="#c0d3c9" font-size="22">Content, conversations and follow-ups in one place.</text>
 <text x="66" y="364" fill="#d8ed91" font-size="16" letter-spacing="2">LOCAL RECORDS  ·  DESKTOP AI  ·  OPEN SOURCE</text>
-<g transform="translate(885 126)"><rect width="270" height="65" rx="16" fill="#f4f4e9"/><text x="24" y="40" font-size="20" fill="#173d32">01   Your context &amp; goals</text><path d="M135 65v20" stroke="#d8ed91" stroke-width="2"/><rect y="85" width="270" height="65" rx="16" fill="#d8ed91"/><text x="24" y="125" font-size="20" fill="#173d32">02   AI drafts &amp; reviews</text><path d="M135 150v20" stroke="#d8ed91" stroke-width="2"/><rect y="170" width="270" height="65" rx="16" fill="#f4f4e9"/><text x="24" y="210" font-size="20" fill="#173d32">03   You decide &amp; direct</text></g></g></svg>
+<g transform="translate(885 126)"><rect width="270" height="65" rx="16" fill="#f4f4e9"/><text x="24" y="40" font-size="20" fill="#173d32">01   Your context &amp; goals</text><path d="M135 65v20" stroke="#d8ed91" stroke-width="2"/><rect y="85" width="270" height="65" rx="16" fill="#d8ed91"/><text x="24" y="125" font-size="20" fill="#173d32">02   Your action scope</text><path d="M135 150v20" stroke="#d8ed91" stroke-width="2"/><rect y="170" width="270" height="65" rx="16" fill="#f4f4e9"/><text x="24" y="210" font-size="20" fill="#173d32">03   AI prepares &amp; acts</text></g></g></svg>

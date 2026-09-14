@@ -1,6 +1,6 @@
 # Architecture
 
-Social Media Plus combines a local dashboard and durable records with skills executed by the user's selected desktop assistant. The Python runtime performs deterministic validation and storage. The host assistant performs research, writing, review, and permitted external actions using tools actually available in its session.
+Your desktop AI reads the project skills, researches and writes, then uses its browser tools to carry out requested LinkedIn actions. The local dashboard saves requests and displays results. Python checks and stores content versions, relationships and action records in SQLite. See [how it works](how-it-works.md) for the user workflows.
 
 ```mermaid
 flowchart TD
@@ -26,19 +26,19 @@ flowchart TD
 | `src/socialmediaplus/` | Python CLI, SQLite transactions, version identity, relationship history, analytics, and dashboard server. |
 | `scripts/` | Install, start, MCP, and records entry points. |
 | `config/` | Portable defaults and local host binding. |
-| `profile/` | Blank starting templates, later filled with the new user's own context. |
+| `profile/` | Private profile and voice files initialized from blank templates. |
 | `.agents/skills/`, `.claude/skills/` | Host entry points for shared workflows. |
 | `workflows/` and agent role instructions | Preparation, review, engagement, publishing, and analysis procedures. |
-| `data/socialmediaplus.sqlite3` | Authoritative local state, request IDs, versions, attempts, receipts, and measurements. |
-| `data/dashboard-queue.json` | Advisory file for detecting queued work; never the source of authorization or completion truth. |
+| `data/socialmediaplus.sqlite3` | Main record of state, request IDs, versions, attempts, receipts and measurements. |
+| `data/dashboard-queue.json` | Notification file that points to queued work; the database holds request scope and results. |
 | `runtime/install/` | Generated host MCP snippets and listener prompt containing the selected absolute local path. |
 | `.env.local` | Private LinkedIn app settings; values are not returned by dashboard status reads. |
 
-## Why PostgreSQL is absent
+## Storage and scheduling
 
-The core application stores its data in SQLite. The separate Postiz deployment used in the original private workspace brought its own PostgreSQL infrastructure. This public package excludes that deployment and its integration route. It requires no PostgreSQL connection string, migration service, container stack, or hosted database.
+SQLite is embedded in the local runtime, so no database server is needed. The package has no PostgreSQL or Postiz dependency.
 
-Removing Postiz also removes that scheduler transport. A local scheduled time in SQLite is planning metadata until a supported publishing route returns a confirmed remote receipt. A desktop listener waking up is separate from LinkedIn accepting or scheduling a post.
+The agent schedules content through LinkedIn's own controls when the format and account support them. A time saved in SQLite is a proposed slot until the agent verifies the item in LinkedIn's queue. The desktop listener checks dashboard requests; LinkedIn handles delivery after accepting a native schedule.
 
 ## How a dashboard action runs
 

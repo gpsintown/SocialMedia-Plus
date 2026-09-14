@@ -1,6 +1,6 @@
 # Codex / ChatGPT desktop setup
 
-Use the desktop agent with access to the folder on this computer. Current OpenAI documentation describes these capabilities under ChatGPT desktop and Work; some installations still expose Codex names. Follow the tools and settings your installed host actually provides. The package does not depend on a specific model name.
+Open this project in your local Codex desktop session so the copilot can read your profile, process dashboard requests and use its browser tools for LinkedIn work. Use the equivalent local Work session if that is how your installed OpenAI desktop app labels it. Keep your chosen model; setup depends on the tools available in that session.
 
 ## 1. Open the clone
 
@@ -66,11 +66,11 @@ Local scheduled tasks require the computer and desktop app to be running. Web sc
 
 If there is no callable scheduling capability, keep the app usable and return the prepared prompt with `SMP RUN QUEUE` as the manual fallback. Do not claim a listener is installed merely because a Markdown file exists.
 
-## 6. Verify and begin
+## 6. Verify the connection and browser
 
 1. Open [the dashboard](http://127.0.0.1:4010), choose LinkedIn, and use **Status** for the first request.
 2. Confirm the request is saved, processed once, and shown as completed with its actual result.
-3. Use `SMP START` to fill your own profile and preferences from the blank templates.
+3. Use `SMP START` to fill your own profile and preferences from the blank templates. Follow [personalization](personalization.md), then ask the agent to verify your signed-in LinkedIn account through its supported browser tool without sending anything.
 4. Use `SMP WEEK` for a reviewable content batch. Use `SMP SCHEDULE` only after the finished batch is presented and you intend to authorize its supported publishing route.
 
 The settings form is described in [LinkedIn setup](linkedin-setup.md). Saved developer credentials do not establish OAuth authentication in this release.

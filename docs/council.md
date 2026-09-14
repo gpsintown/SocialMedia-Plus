@@ -1,6 +1,6 @@
 # Council roles in Codex and Claude
 
-The package includes five editorial roles, a shared frozen-packet workflow and a synthesis method. Codex reads the canonical role files in `.agents/council/`; Claude Code has matching project agent definitions in `.claude/agents/`. The same content skills are present under `.agents/skills/` and `.claude/skills/`.
+The council checks a substantial draft before you use it. Five roles examine its factual support, voice, clarity, opposing arguments and likely effect on readers. Each starts with the same saved draft, context and sources; the final review decides which edits the evidence supports. Codex reads the canonical role files in `.agents/council/`; Claude Code has matching project agent definitions in `.claude/agents/`. The same content skills are present under `.agents/skills/` and `.claude/skills/`.
 
 | Host | How to use |
 | --- | --- |
@@ -11,4 +11,4 @@ The package includes five editorial roles, a shared frozen-packet workflow and a
 
 See [the complete workflow](../workflows/council.md). No model, reasoning effort, account identity, session ID or private user context is baked into the roles. Each reviewer receives only the current user's selected evidence.
 
-The MIT-licensed council-review adaptation retains its notice. The privately consulted upstream LLM Council snapshot lacked a redistribution license, so its source text is excluded. The public `llm-council` entry is newly written project instructions for generic peer review; it ships no unlicensed upstream implementation or prompt text. This package does not assert that separate role prompts are separate models or that agreement establishes truth.
+The MIT-licensed council-review adaptation retains its notice. The privately consulted upstream LLM Council snapshot lacked a redistribution license, so its source text is excluded. The public `llm-council` entry is newly written project instructions for generic peer review; it ships no unlicensed upstream implementation or prompt text. The roles can use the same selected model. Agreement is a review result, not proof that a claim is true.
