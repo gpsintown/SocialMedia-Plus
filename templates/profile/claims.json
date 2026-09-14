@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "source_policy": "User-provided profile and resume facts are attributed claims. Publication permission is separate. AI interpretations and repeated sources are not independent verification.",
+  "claims": []
+}

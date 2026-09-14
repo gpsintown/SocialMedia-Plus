@@ -1,0 +1,3 @@
+# Social Media Plus context for Humanizer
+
+Before applying the unmodified Humanizer skill to this user's writing, read the private `profile/context.md`, `profile/voice.md`, `profile/editorial-policy.md` and relevant `profile/claims.json`. The project supplies these alongside the chosen text; they do not alter the upstream rules. Template defaults and AI interpretations are not the user's approved personal statements. Use the user's selected Codex or Claude host, preserve facts and personality, and keep any private source notes out of public copy. The project instructions require this context even when Humanizer is invoked directly.

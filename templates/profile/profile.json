@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "name": "",
+  "linkedin_url": "",
+  "headline": "",
+  "public_location": "",
+  "source_type": "not_supplied",
+  "observed_on": null,
+  "resume_status": "not_supplied_optional",
+  "expertise_claims": [],
+  "goals": [],
+  "audiences": [],
+  "unresolved": [],
+  "public_content_constraints": [],
+  "voice_status": "not_calibrated"
+}

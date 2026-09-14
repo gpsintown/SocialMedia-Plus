@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "sources": [],
+  "note": "Private source inventory. For each source record its local path, origin, supplied/observed time, hash where applicable and limits of evidence."
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "default_surface": "User-authorized LinkedIn browser session or permitted supplied sources",
+  "session_rule": "Choose a relevant query, inspect current discussion context and stop at the bounded review budget.",
+  "preferred_recency": "Past week",
+  "network_first": true,
+  "queries": [],
+  "candidate_requirements": [
+    "Exact author and stable target URL",
+    "Current post and parent discussion context",
+    "Observation time and displayed age",
+    "Relationship history and duplicate check",
+    "Specific useful contribution"
+  ],
+  "verification": "not_started"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "authorization": {
+    "source": null,
+    "standing_permissions": [],
+    "activation": "Only a current explicit live plus invocation authorizes its stated scope. Installation, examples, preview and timers alone authorize no external actions."
+  },
+  "inmail": {
+    "enabled": false,
+    "per_session": 2,
+    "rolling_7_days": 5,
+    "reserve": 1,
+    "balance_max_age_minutes": 60,
+    "prefer_free_message": true,
+    "unknown_balance": "do_not_spend",
+    "purchase_credits": false
+  },
+  "outreach": {
+    "enabled": false,
+    "company_cooldown_days": 7,
+    "job_observation_max_age_minutes": 60,
+    "new_search_posted_within_hours": 24,
+    "new_search_applicants_upper_bound_exclusive": 10,
+    "countries": [],
+    "contact_policy": "One observed hiring contact per qualifying job/company; check history across sessions.",
+    "attachments_unavailable": "Hold the send; do not upload a public resume workaround."
+  },
+  "resume": {
+    "path": "",
+    "sha256": "",
+    "display_filename": "",
+    "policy": "Only a reviewed user-supplied PDF configured locally; never a bundled example."
+  },
+  "engage": {
+    "preferred_post_age_hours": 24,
+    "relevance_required": true,
+    "like_targets": [
+      "post",
+      "comment"
+    ],
+    "likes_policy": "Read the item and have a specific reason to agree; check whether already liked.",
+    "reposts_per_session": 1,
+    "reposts_rolling_7_days": 2,
+    "repost_preference": "Keep native attribution and add a useful original perspective."
+  },
+  "groups": [],
+  "job_focus": {
+    "primary": [],
+    "conditional": [],
+    "fit_basis": "Compare essential duties and requirements with sourced profile claims; never infer location, work rights, language proficiency or employer interest."
+  }
+}

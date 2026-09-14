@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "project": "Social Media Plus",
+  "owner": "",
+  "profile_url": "",
+  "publishing_identity": "personal_profile",
+  "timezone": "UTC",
+  "display_timezones": [],
+  "active_platforms": [
+    "linkedin"
+  ],
+  "inactive_platforms": [
+    "instagram",
+    "youtube"
+  ],
+  "model_policy": "Use the model selected by the user in the current Codex or Claude host. No separate LLM API is required.",
+  "publishing_mode": "native_linkedin",
+  "pilot": {
+    "duration_weeks": 8,
+    "start_date": null,
+    "start_rule": "First confirmed publication, not installation.",
+    "feed_posts_per_week": 3,
+    "article_interval_weeks": 2,
+    "daily_minutes": 30,
+    "daily_shortlist_limit": 8,
+    "time_windows": [
+      "09:00",
+      "14:00"
+    ],
+    "time_windows_status": "hypotheses_to_test",
+    "execution": "explicit_user_invocation_or_verified_opt_in_listener",
+    "editorial_state": "onboarding_required"
+  },
+  "audiences": {
+    "primary": [],
+    "secondary": [],
+    "status": "not_configured"
+  },
+  "content_pillars": [
+    "Verified experience",
+    "Practical explanation",
+    "Grounded opinion"
+  ],
+  "relationship_buckets": [
+    "peer",
+    "team_leader",
+    "hiring_contact",
+    "customer_or_partner",
+    "educator_community",
+    "other_professional",
+    "unclassified"
+  ],
+  "daily_priority_buckets": [],
+  "privacy": {
+    "keep_raw_imports_private": true,
+    "publicize_recruiter_only_settings": false,
+    "publicize_relocation_or_job_search_intent": false
+  },
+  "profile_context": {
+    "shared_brief": "profile/context.md",
+    "voice": "profile/voice.md",
+    "claims": "profile/claims.json",
+    "private_background": "profile/private/background.md",
+    "source_manifest": "profile/sources/manifest.json",
+    "require_personal_context_for_writing_and_review": true
+  },
+  "master_guide": "SOCIAL_MEDIA_PLUS.md",
+  "chat_commands": "config/chat-commands.json",
+  "engagement": {
+    "authorization_source": null,
+    "trigger": "current_explicit_live_user_invocation",
+    "allowed_actions": [
+      "comment",
+      "reply"
+    ],
+    "default_minutes": 30,
+    "preview_modifier": "preview",
+    "excluded_without_separate_instruction": [
+      "dm",
+      "connection_invitation",
+      "application",
+      "follow",
+      "bulk_likes"
+    ],
+    "receipt_required": true,
+    "network_memberships": [
+      "connection",
+      "follower"
+    ],
+    "plus_policy": "config/engagement-plus.json"
+  },
+  "authorizations": {
+    "standing": [],
+    "publication": null,
+    "outreach": null
+  },
+  "configuration_note": "These are empty public defaults. Keep personal profile, evidence, permissions and secrets in ignored local files. Configure identity/timezone before publishing."
+}

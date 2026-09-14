@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "prefix": "SMP",
+  "case_sensitive": false,
+  "kind": "plain_language_project_chat_dispatch_not_executable_parser",
+  "master": "SOCIAL_MEDIA_PLUS.md",
+  "load_prerequisites_implicitly": true,
+  "automatic_background_runs": false,
+  "commands": {
+    "INSTALL": {
+      "workflow": "workflows/install.md",
+      "mode": "local_setup",
+      "helper": "python3 scripts/smp-install.py --root . --host codex",
+      "authorization": "Creates private local state, starts the dashboard, and attempts listener setup through the current host\u2019s supported scheduler, then verifies a harmless STATUS pickup. No social action is authorized by installation."
+    },
+    "START": {
+      "workflow": "SOCIAL_MEDIA_PLUS.md",
+      "mode": "ensure_readiness",
+      "helper": "python3 scripts/smp-start.py"
+    },
+    "STATUS": {
+      "workflow": "SOCIAL_MEDIA_PLUS.md",
+      "mode": "read_only",
+      "helper": "python3 scripts/smp-start.py --check"
+    },
+    "WEEK": {
+      "workflow": "workflows/weekly.md",
+      "mode": "prepare_only",
+      "argument": "optional Monday date",
+      "existing_week": "Resume existing drafts; do not create duplicates."
+    },
+    "REWORK": {
+      "workflow": "workflows/weekly.md",
+      "mode": "revise_local",
+      "argument": "week or content ID and feedback"
+    },
+    "ASSET": {
+      "workflow": "workflows/weekly.md",
+      "mode": "create_local_asset",
+      "argument": "content ID"
+    },
+    "SCHEDULE": {
+      "workflow": "workflows/publish.md",
+      "mode": "execute_exact_reviewed_batch",
+      "argument": "week or content ID",
+      "authorization": "Current instruction covers only the completed unchanged batch already presented, including assets, destination, route and slots."
+    },
+    "REVIEW": {
+      "workflow": "workflows/analyze.md",
+      "mode": "review",
+      "argument": "optional week Monday date"
+    },
+    "IMPORT": {
+      "workflow": "workflows/analyze.md",
+      "mode": "import_user_supplied",
+      "argument": "local file path"
+    },
+    "EIGHT-WEEK": {
+      "workflow": "workflows/eight-week.md",
+      "mode": "review_only"
+    },
+    "BACKUP": {
+      "workflow": "SOCIAL_MEDIA_PLUS.md",
+      "mode": "local_backup",
+      "helper": "python3 scripts/backup-workspace.py"
+    },
+    "END": {
+      "workflow": "SOCIAL_MEDIA_PLUS.md",
+      "mode": "persist_handover"
+    },
+    "ENGAGE": {
+      "workflow": "workflows/daily.md",
+      "mode": "live_comment_reply",
+      "audience": "mixed",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "authorization": "A current explicit user invocation permits contextual comments and replies in this session. Preview sends nothing. No permissions are inherited from this repository."
+    },
+    "NETWORK": {
+      "workflow": "workflows/daily.md",
+      "mode": "live_comment_reply",
+      "audience": "existing_connections_and_observed_followers",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "authorization": "A current explicit user invocation permits contextual comments and replies in this session. Preview sends nothing. No permissions are inherited from this repository."
+    },
+    "DISCOVER": {
+      "workflow": "workflows/daily.md",
+      "mode": "live_comment_reply",
+      "audience": "relevant_new_discussions",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "authorization": "A current explicit user invocation permits contextual comments and replies in this session. Preview sends nothing. No permissions are inherited from this repository."
+    },
+    "RECRUITERS": {
+      "workflow": "workflows/daily.md",
+      "mode": "live_comment_reply",
+      "audience": "relevant_hiring_discussions",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "authorization": "A current explicit user invocation permits contextual comments and replies in this session. Preview sends nothing. No permissions are inherited from this repository."
+    },
+    "REPLIES": {
+      "workflow": "workflows/daily.md",
+      "mode": "live_comment_reply",
+      "audience": "existing_conversations",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "authorization": "A current explicit user invocation permits contextual comments and replies in this session. Preview sends nothing. No permissions are inherited from this repository."
+    },
+    "ENGAGE+": {
+      "workflow": "workflows/engage-plus.md",
+      "mode": "live_plus_engagement",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "policy": "config/engagement-plus.json",
+      "allowed_actions": [
+        "comment",
+        "reply",
+        "reaction",
+        "repost"
+      ],
+      "setup_is_not_execution": true,
+      "receipt_required": true,
+      "authorization": "Only a current explicit user invocation grants the documented session scope. Private outreach needs configured user goals/resume; spending existing InMail credits also needs explicit opt-in. No credit purchases."
+    },
+    "RECRUITER+": {
+      "workflow": "workflows/recruiter-plus.md",
+      "mode": "live_hiring_outreach",
+      "default_minutes": 30,
+      "preview_modifier": "preview",
+      "policy": "config/engagement-plus.json",
+      "allowed_actions": [
+        "comment",
+        "reply",
+        "reaction",
+        "dm",
+        "inmail"
+      ],
+      "setup_is_not_execution": true,
+      "receipt_required": true,
+      "authorization": "Only a current explicit user invocation grants the documented session scope. Private outreach needs configured user goals/resume; spending existing InMail credits also needs explicit opt-in. No credit purchases."
+    }
+  },
+  "aliases": {
+    "SMP RECRUITERS+": "SMP RECRUITER+",
+    "SPM RECRUITER+": "SMP RECRUITER+",
+    "SPM RECRUITERS+": "SMP RECRUITER+"
+  },
+  "queue_dispatch": {
+    "chat_command": "SMP RUN QUEUE",
+    "workflow": "workflows/dashboard-queue.md",
+    "note": "Processes saved unexpired authorized invocations; this controller is not a social action."
+  },
+  "routines": {
+    "first_run": [
+      "SMP INSTALL",
+      "SMP START"
+    ],
+    "weekly": [
+      "SMP START",
+      "SMP WEEK <Monday date>",
+      "SMP SCHEDULE <same Monday date>"
+    ],
+    "daily": [
+      "SMP START",
+      "SMP ENGAGE 30"
+    ],
+    "save_results_after_each_workflow": true
+  }
+}

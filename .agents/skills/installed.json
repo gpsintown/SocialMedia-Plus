@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "project",
+  "canonical_directory": ".agents/skills",
+  "claude_code_directory": ".claude/skills",
+  "runtime": "User-selected Codex or Claude host model; local CLI for records",
+  "skills": [
+    "content-strategy",
+    "council-review",
+    "humanizer",
+    "linkedin-content",
+    "llm-council",
+    "postiz",
+    "smp-analyze",
+    "smp-copilot",
+    "smp-council",
+    "smp-daily",
+    "smp-install",
+    "smp-publish",
+    "smp-weekly",
+    "social"
+  ],
+  "council": {
+    "entrypoint": "smp-council",
+    "roles": [
+      "skeptical-practitioner",
+      "voice-editor",
+      "busy-reader",
+      "fair-contrarian",
+      "relationship-reputation"
+    ],
+    "first_pass_independence": "Only when supported separate agents actually ran",
+    "sequential_fallback": "Explicitly labelled one-model review"
+  },
+  "auto_discovery": "Host-specific; direct reading remains the fallback. Cowork does not automatically use Claude Code project conventions."
+}

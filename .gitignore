@@ -1,0 +1,40 @@
+# Personal runtime: never include in a public repository.
+.env
+.env.*
+!.env.example
+/profile/
+/config/settings.json
+/config/dashboard.json
+/config/engagement-plus.json
+/data/
+/content/
+/assets/
+/network/
+/reports/
+/research/
+/backups/
+/runtime/
+/tmp/
+/exports/
+/services/
+/.mcp.json
+/.codex/config.toml
+/.claude/settings.local.json
+/.playwright-mcp/
+*.sqlite*
+*.db
+*.pem
+*.key
+api-key
+# Dependencies and machine state
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+.pytest_cache/
+/.build/
+/dist/
+# ui/dist is deliberately shipped for Node-free startup.
